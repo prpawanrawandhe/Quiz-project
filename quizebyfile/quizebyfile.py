@@ -92,13 +92,36 @@ def score(r,w):
     print(f"No. of wrong Ans : {w}")
     print(f"\nYour score : {(r/5)*100}\n")
 
+def registration():
+    a= input("/nif you doesn't want to register press 's' otherwise press : ")
+    if a == 's':
+        return
 
-def welcome():
-    print("\n~ WELCOME TO QUIZE ROUNDS ~")
-    login()
+    name = input("please enter your name : ")
+    email = input("please enter your email : ")
+    user = input("please create username : ")
+    passwd = input("please create password : ")
+    print("Registration successful!")
+
+
+def run():
     a = quize()
     score(a[0],a[1])
 
+    b = input("press 'e' for exit or press enter to attempt more quiz : ")
+
+    if b == 'e':
+        print("thank you!!")
+        return
+    run()
+
+
+def welcome():
+    print("\n~ WELCOME TO QUIZE ROUNDS ~")
+    registration()
+    login()
+    run()
+    
 
 welcome()
 
